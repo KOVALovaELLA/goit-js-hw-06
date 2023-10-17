@@ -14,4 +14,7 @@ ingredients.forEach(ingredient => {
   li.textContent = ingredient;
   li.classList.add('item');
   ulIngredients.appendChild(li);
+  
 })
+
+console.log(ulIngredients)
