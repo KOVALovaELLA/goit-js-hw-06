@@ -1,14 +1,15 @@
-const nameInput = document.getElementById('name-input');
-const nameOutput = document.getElementById('name-output');
+const refs = {
+  input: document.querySelector('#name-input'),
+  nameLabel: document.querySelector('#name-output')
+}
 
-nameInput.addEventListener('input', function() {
-  // Отримуємо значення введеного тексту
-  const enteredName = nameInput.value;
-
-  // Оновлюємо вміст елементу span в залежності від значення
-  if (enteredName.trim() === '') {
-    nameOutput.textContent = 'Anonymous';
+refs.input.addEventListener('input', onInputChange);
+function onInputChange(event) {
+  const EVENTjs=event.currentTarget.value
+  if (EVENTjs != '') {
+    refs.nameLabel.textContent = EVENTjs;
   } else {
-    nameOutput.textContent = enteredName;
+    refs.nameLabel.textContent = 'Anonymous'
   }
-});
+}
+

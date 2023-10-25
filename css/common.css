@@ -27,13 +27,19 @@ button {
 
 /*3 task */
 
+/* CSS стилі для галереї */
 .gallery {
   display: flex;
   list-style: none;
   padding: 0;
-  gap: 50px;
+  margin: 0;
 }
-.gallery-item img {
-  width: 100%;
+
+.gallery li {
+  margin: 30px;
+}
+
+.gallery img {
+  max-width: 100%;
   height: auto;
 }
