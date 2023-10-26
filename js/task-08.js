@@ -1,38 +1,21 @@
+const loginForm = document.querySelector('.login-form');
 
-  
-  function handleSubmit(event) {
-    event.preventDefault(); 
+loginForm.addEventListener('submit', function (event) {
+  event.preventDefault(); 
 
-    const form = event.target; 
-    const formData = new FormData(form); 
+  const emailInput = loginForm.elements.email;
+  const passwordInput = loginForm.elements.password;
 
-    
-    let isFormValid = true;
-    formData.forEach((value) => {
-      if (value.trim() === '') {
-        isFormValid = false;
-      }
-    });
+  if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
+    alert('Всі поля повинні бути заповнені');
+  } else {
+    const loginData = {
+      email: emailInput.value,
+      password: passwordInput.value,
+    };
 
-    if (!isFormValid) {
-      alert('Всі поля повинні бути заповнені!');
-    } else {
-     
-      const formDataObject = {};
-      formData.forEach((value, key) => {
-        formDataObject[key] = value;
-      });
+    console.log(loginData);
 
-     
-      console.log(formDataObject);
-
-     
-      form.reset();
-    }
+    loginForm.reset(); 
   }
-
-  
-  const loginForm = document.querySelector('.login-form');
-
-  
-  loginForm.addEventListener('submit', handleSubmit);
+});

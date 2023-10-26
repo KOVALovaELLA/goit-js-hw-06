@@ -5,8 +5,8 @@ const refs = {
 
 refs.input.addEventListener('input', onInputChange);
 function onInputChange(event) {
-  const EVENTjs=event.currentTarget.value
-  if (EVENTjs != '') {
+  const EVENTjs=event.currentTarget.value.trim()
+  if (EVENTjs !== '') {
     refs.nameLabel.textContent = EVENTjs;
   } else {
     refs.nameLabel.textContent = 'Anonymous'

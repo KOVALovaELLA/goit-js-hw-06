@@ -4,12 +4,15 @@ input.addEventListener('blur', onInputBlur);
 
 function onInputBlur() {
     const enteredValue = input.value;
-    const htmlLength = input.getAttribute("data-length");
-    if (enteredValue.length == htmlLength) {
-        input.classList.remove("invalid");
-    input.classList.add("valid");
+    const htmlLength = Number(input.getAttribute("data-length"));
+  if (enteredValue.length === htmlLength) {
+    validOrInvalid("invalid", "valid");
+        
   } else {
-    input.classList.remove("valid");
-    input.classList.add("invalid");
+    validOrInvalid("valid", "invalid");
   }
+}
+function validOrInvalid(a, b) {
+  input.classList.remove(a);
+  input.classList.add(b);
 }
